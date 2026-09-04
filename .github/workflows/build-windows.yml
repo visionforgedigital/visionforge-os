@@ -1,0 +1,55 @@
+name: Build VisionForge OS Desktop
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "desktop-v*"
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    defaults:
+      run:
+        working-directory: desktop-app
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: desktop-app/package.json
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Recompilar módulos nativos
+        run: npx electron-builder install-app-deps
+
+      - name: Gerar instalador Windows
+        run: npm run dist:win
+
+      - name: Verificar instalador
+        shell: pwsh
+        run: |
+          $exe = Get-ChildItem -Path dist -Filter *.exe -Recurse | Select-Object -First 1
+
+          if (-not $exe) {
+            Write-Error "O instalador .exe não foi gerado."
+            exit 1
+          }
+
+          Write-Host "Instalador encontrado:"
+          Write-Host $exe.FullName
+
+      - name: Disponibilizar EXE para download
+        uses: actions/upload-artifact@v4
+        with:
+          name: VisionForge-OS-Windows-Installer
+          path: desktop-app/dist/*.exe
+          if-no-files-found: error
