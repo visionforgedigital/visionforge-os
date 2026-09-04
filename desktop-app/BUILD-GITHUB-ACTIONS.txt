@@ -1,0 +1,10 @@
+VISIONFORGE OS DESKTOP — GITHUB ACTIONS
+
+Workflow: .github/workflows/build-windows.yml
+Runner: windows-latest
+Node: 22.16.0 x64
+Target: Windows x64 / NSIS
+Output: VisionForge-OS-Setup-0.16.0.exe
+
+O workflow usa npm install porque este pacote não possui package-lock.json.
+Depois executa electron-builder install-app-deps para preparar módulos nativos como better-sqlite3.

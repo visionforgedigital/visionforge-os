@@ -1,0 +1,17 @@
+VISIONFORGE OS DESKTOP — RELEASE WINDOWS
+
+Versão: 0.15.0
+Produto: VisionForge OS
+Plataforma: Windows 10/11 x64
+Instalador esperado: VisionForge-OS-Setup-0.15.0.exe
+
+Build em Windows:
+1. Instale Node.js LTS.
+2. Entre nesta pasta desktop-app.
+3. Execute: npm install
+4. Execute: npm run dist:win
+5. O instalador será criado na pasta dist/.
+6. Copie VisionForge-OS-Setup-0.15.0.exe para a pasta desktop-app do plugin.
+7. O botão Aplicativo do WordPress detectará automaticamente o .exe e passará a entregá-lo.
+
+O plugin mantém fallback para o pacote ZIP caso o instalador ainda não esteja publicado.

@@ -1,0 +1,12 @@
+BUILD AUTOMÁTICO DO INSTALADOR WINDOWS
+
+1. Publique este diretório em um repositório GitHub.
+2. No GitHub, abra Actions > Build VisionForge OS Desktop > Run workflow.
+3. O runner Windows instala as dependências e executa electron-builder.
+4. O .exe aparece como artifact 'visionforge-os-windows'.
+5. Para publicar automaticamente uma release, crie uma tag no formato desktop-v0.16.0 e faça push.
+
+Arquivo gerado:
+VisionForge-OS-Setup-0.16.0.exe
+
+Observação: a compilação precisa ocorrer em Windows (GitHub-hosted runner ou máquina Windows). O código do aplicativo não depende de um WordPress local.
