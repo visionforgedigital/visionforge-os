@@ -1,0 +1,9 @@
+VISIONFORGE OS DESKTOP — BUILD WINDOWS
+
+1. Abra este diretório em um computador Windows com Node.js instalado.
+2. Execute: npm install
+3. Execute: npm run dist:win
+4. O instalador será criado em dist/ com o nome VisionForge-OS-Setup-0.14.0.exe.
+
+O aplicativo usa SQLite local e a API /wp-json/vfos/v1/ do plugin VisionForge OS.
+O servidor WordPress/MySQL permanece como fonte oficial dos dados.
