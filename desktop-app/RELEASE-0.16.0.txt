@@ -1,9 +1,0 @@
-VisionForge OS Desktop 0.16.0
-
-Release preparada para build Windows automatizado.
-- Electron + NSIS
-- SQLite local
-- fila e sincronização
-- conflitos
-- arquivos offline
-- autenticação e permissões

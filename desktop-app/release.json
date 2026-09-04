@@ -1,1 +1,0 @@
-{"version":"0.16.0","platform":"windows-x64","artifact":"VisionForge-OS-Setup-0.16.0.exe","status":"build-required","notes":"Build this artifact on Windows or a CI runner capable of producing the NSIS installer."}
